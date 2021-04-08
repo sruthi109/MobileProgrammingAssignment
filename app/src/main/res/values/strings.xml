@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">AssignmentNew</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_label"><b>Login</b></string>
+    <string name="hint_email"><b>Please Enter Email</b> </string>
+    <string name="hint_password"><b>Please Enter Password</b> </string>
+    <string name="hint_confirmPassword"><b>Please confirm Password</b> </string>
+    <string name="hint_name"><b>Full Name</b> </string>
+    <string name="hint_dob"><b>please enter DateofBirth</b> </string>
+    <string name="hint_mobile"><b>please enter mobile number</b> </string>
+    <string name="hint_location"><b>Please enter Location</b> </string>
+    <string name="hint_city"><b>Please enter City</b> </string>
+    <string name="hint_gender"><b>Please enter gender</b> </string>
+    <string name="register_label">Register</string>
+    <string name="firstname">Please enter firstname</string>
+    <string name="lastname">Please enter lastname</string>
+    <string name="text_forgetPassword"><i><u>Forgot Password</u></i></string>
+    <string name="defaultFrag_text">Default Fragment</string>
+    <string name="firstFrag_text">First Fragment</string>
+    <string name="secondFrag_text">Second Fragment</string>
+    <string name="demo_drawer">Demo Drawer</string>
+</resources>

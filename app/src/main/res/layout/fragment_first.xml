@@ -3,15 +3,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/wallpaper"
     tools:context=".FirstFragment">
-
     <TextView
+        android:id="@+id/txt_profile_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="@string/firstFrag_text"
-        android:textColor="#FF0040"
-        android:textSize="25sp" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="9dp"
+        android:text="@string/profile_label"
+        android:textColor="@color/gold"
+        android:fontFamily="@font/aclonica"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/profilefirstname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_profile_label"
+        android:inputType="text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/aclonica"
+        android:textColorHint="@color/gold"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/profilelastname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profilefirstname"
+        android:inputType="text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/aclonica"
+        android:textColorHint="@color/gold"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/pgender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profilelastname"
+        android:inputType="text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/aclonica"
+        android:textColorHint="@color/gold"
+        android:textSize="20sp"/>
 
 
+    <TextView
+        android:id="@+id/pdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pgender"
+        android:inputType="date"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/aclonica"
+        android:textColorHint="@color/gold"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/pemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pdate"
+        android:inputType="textEmailAddress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/aclonica"
+        android:textAlignment="center"
+        android:textColorHint="@color/gold"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/pcity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pemail"
+        android:inputType="text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/aclonica"
+        android:textColorHint="@color/gold"
+        android:textAlignment="center"
+        android:textSize="20sp"/>
 </RelativeLayout>

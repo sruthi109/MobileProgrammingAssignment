@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
-        <group android:checkableBehavior="single">
-            <item android:id="@+id/dashboard"
-                android:title="First Fragment" />
-            <item android:id="@+id/first"
-                android:title="First Fragment" />
-            <item android:id="@+id/second"
-                android:title="Second Fragment" />
-        </group>
-    </group>
 
+            <item android:id="@+id/dashboard"
+                android:title="DashBoard Fragment" />
+            <item android:id="@+id/first"
+                android:title="Profile Fragment" />
+            <item android:id="@+id/second"
+                android:title="Logout" />
+        </group>
 
 </menu>

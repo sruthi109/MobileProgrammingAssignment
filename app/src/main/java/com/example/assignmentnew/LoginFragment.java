@@ -67,6 +67,14 @@ public class LoginFragment extends Fragment {
 
         navController = Navigation.findNavController(getActivity(),R.id.host_fragment);
 
+        currentUser = fireAuth.getCurrentUser();
+
+        if (currentUser != null)
+        {
+            Toast.makeText(getActivity().getApplicationContext(), "User Already Signing", Toast.LENGTH_LONG).show();
+            Intent intent=new Intent(getActivity(),MainActivity2.class);
+            startActivity(intent);
+        }
         btn_signup.setOnClickListener(view1 -> {
             navController.navigate(R.id.registerFragment);
         });
@@ -88,14 +96,7 @@ public class LoginFragment extends Fragment {
         super.onStart();
         Log.d("LoginFragment","onStart Called!");
 
-        currentUser = fireAuth.getCurrentUser();
 
-        if (currentUser != null)
-        {
-
-            updateUI(currentUser);
-            Toast.makeText(getActivity().getApplicationContext(),"User Already Signing",Toast.LENGTH_LONG).show();
-        }
     }
 
     public void loginUser(String email, String pass)
@@ -107,7 +108,8 @@ public class LoginFragment extends Fragment {
                     {
                         Toast.makeText(getActivity().getApplicationContext(),"Login Success!", Toast.LENGTH_SHORT).show();
                         currentUser = fireAuth.getCurrentUser();
-                        updateUI(currentUser);
+                        Intent intent = new Intent(getActivity().getApplicationContext(),MainActivity2.class);
+                        startActivity(intent);
                     }else {
                         Toast.makeText(getActivity().getApplicationContext(),"Authenticate Failed!", Toast.LENGTH_SHORT).show();
                     }
@@ -116,12 +118,6 @@ public class LoginFragment extends Fragment {
     }
 
 
-    public void updateUI(FirebaseUser user)
-    {
-        Bundle b = new Bundle();
-        b.putParcelable("user",user);
-        navController.navigate(R.id.dashboardFragment,b);
-    }
 
     public boolean checkEmptyFields()
     {

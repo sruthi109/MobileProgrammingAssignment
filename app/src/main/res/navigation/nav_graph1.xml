@@ -6,13 +6,14 @@
     app:startDestination="@id/dashboardFragment">
 
     <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.assignmentnew.dashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+    <fragment
         android:id="@+id/firstFragment"
         android:name="com.example.assignmentnew.FirstFragment"
         android:label="fragment_first"
         tools:layout="@layout/fragment_first" />
-    <fragment
-        android:id="@+id/secondFragment"
-        android:name="com.example.assignmentnew.SecondFragment"
-        android:label="fragment_second"
-        tools:layout="@layout/fragment_second" />
+
 </navigation>

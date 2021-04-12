@@ -25,10 +25,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class dashboardFragment extends Fragment {
 
 
-    Button btn_signOut;
     FirebaseUser user;
     FirebaseFirestore fireStore;
     NavController navController;
+    FirebaseAuth firebaseAuth;
     TextView txt_Name;
 
 
@@ -39,15 +39,6 @@ public class dashboardFragment extends Fragment {
 
 
 
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        user = getArguments().getParcelable("user");
-        fireStore = FirebaseFirestore.getInstance();
-
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -57,24 +48,19 @@ public class dashboardFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+         getActivity().setTitle("Welcome");
 
-        btn_signOut = view.findViewById(R.id.btn_signOut);
         txt_Name = view.findViewById(R.id.txt_welcome);
-
-        navController = Navigation.findNavController(getActivity(),R.id.host_fragment);
+       firebaseAuth=FirebaseAuth.getInstance();
+       fireStore=FirebaseFirestore.getInstance();
 
         readFireStore();
 
-        btn_signOut.setOnClickListener(view1 -> {
-
-            FirebaseAuth.getInstance().signOut();
-            navController.navigate(R.id.loginFragment);
-
-        });
     }
 
     public void readFireStore()
     {
+        user=firebaseAuth.getCurrentUser();
         DocumentReference docRef = fireStore.collection("User").document(user.getUid());
 
         docRef.get().addOnCompleteListener(task -> {
@@ -86,7 +72,7 @@ public class dashboardFragment extends Fragment {
                 {
                     Log.d("DashboardFragment",doc.getData().toString());
 
-                    txt_Name.setText("Welcome "+doc.get("FirstName") +doc.get("LastName") +" !");
+                    txt_Name.setText("Welcome "+doc.get("FirstName") +" "+doc.get("LastName") +" !");
 
 
                 }

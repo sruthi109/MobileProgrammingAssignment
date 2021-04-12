@@ -7,7 +7,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Demo Drawer"
+        android:text="Profile App"
         android:id="@+id/drawer_header_title"
         android:textSize="25dp"/>
 
